@@ -25,7 +25,6 @@ public class UserInterface {
         switch (userSelection.toLowerCase()) {
             case "help":
                 help();
-                break;
             case "start":
                 startGame();
                 break;
@@ -51,11 +50,7 @@ public class UserInterface {
             System.out.println("You are in " + currentRoom.getName());
             System.out.println(currentRoom.getDiscription());
 
-            System.out.println("Enter a command: \n" +
-                    "Type 'look' to search the room \n" +
-                    "Type 'go...' (direction) to move \n" +
-                    "Type 'help' for help \n" +
-                    "Type 'exit' to exit the game \n");
+            System.out.println("Enter a command:");
 
             handleUserInput();
         }
