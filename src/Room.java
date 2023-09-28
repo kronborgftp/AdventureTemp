@@ -13,10 +13,10 @@ public class Room {
     public Room(String name, String discription) {
         this.name = name;
         this.discription = discription;
-
         items = new ArrayList<>();
     }
 
+    //getter for items in the room
     public Item getItemByName(String itemName) {
         for (Item item : items) {
             if (item.getName().equalsIgnoreCase(itemName)) {

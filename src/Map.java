@@ -25,6 +25,7 @@ public class Map {
                 "Can you take the climp, or go in another direction?");
 
 
+        //ITEMS FOR EACH ROOM
         Item item1 = new Item("Sword", "A sharp, shiny sword.");
         Item item2 = new Item("Key", "A rusty old key.");
 
