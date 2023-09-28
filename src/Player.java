@@ -5,6 +5,7 @@ public class Player {
         this.currentRoom = startingRoom;
     }
 
+    //retrieves the currentroom of the player
     public Room getCurrentRoom() {
         return currentRoom;
     }

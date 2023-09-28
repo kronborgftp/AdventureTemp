@@ -61,6 +61,7 @@ public class Map {
     }
 
 
+    //Getter for startingroom
     public Room getStartingRoom() {
         return startingRoom;
     }

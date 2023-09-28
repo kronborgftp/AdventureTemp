@@ -42,11 +42,6 @@ public class UserInterface {
         while (true) {
             Room currentRoom = adventure.getCurrentRoom();
 
-            if (currentRoom == null) {
-                System.out.println("Current room is null! Exiting game.");
-                return;
-            }
-
             System.out.println("You are in " + currentRoom.getName());
             System.out.println(currentRoom.getDiscription());
 
@@ -58,7 +53,7 @@ public class UserInterface {
 
     private void handleUserInput() {
 
-        String[] userSelection = keyboard.nextLine().toLowerCase().trim().split(" ");
+        /*String[] userSelection = keyboard.nextLine().toLowerCase().trim().split(" ");
         String firstWord = userSelection[0];
         switch (firstWord) {
             case "look":
@@ -83,10 +78,10 @@ public class UserInterface {
                 break;
             default:
                 System.out.println("I don't understand");
-        }
+        }*/
 
-       /* String userInput = keyboard.nextLine().toLowerCase();
 
+        String userInput = keyboard.nextLine().toLowerCase();
 
         switch (userInput) {
             case "look":
@@ -111,7 +106,7 @@ public class UserInterface {
                     System.out.println("Invalid command");
                 }
                 break;
-        }*/
+        }
 
 
     }

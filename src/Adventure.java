@@ -9,6 +9,7 @@ public class Adventure {
         initializeGame();
     }
 
+    //sets the players initial starting room
     public void initializeGame() {
         player.setCurrentRoom(map.getStartingRoom());
     }
@@ -17,12 +18,8 @@ public class Adventure {
         this.player.move(direction);
     }
 
+    //retrieves the currentroom of the player
     public Room getCurrentRoom() {
-        if (player != null) {
             return player.getCurrentRoom();
-        } else {
-            System.out.println("Player is not properly initialized.");
-            return null;
-        }
     }
 }
