@@ -29,6 +29,11 @@ public class Map {
         Item item1 = new Item("Sword", "A sharp, shiny sword.");
         Item item2 = new Item("Key", "A rusty old key.");
 
+        // Creating food items
+        Food apple = new Food("Apple", "A juicy red apple", 10);
+        Food poisonBerry = new Food("Poison Berry", "A poisonous berry", -20);
+
+
         startingRoom = room1;
 
         room1.setEast(room2);
@@ -67,6 +72,11 @@ public class Map {
         // ADD ITEMS TO EACH ROOM
         room1.addItem(item1);
         room2.addItem(item2);
+
+        // Adding food items to rooms
+        room1.addItem(apple);
+        room2.addItem(poisonBerry);
+
 
     }
 

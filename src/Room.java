@@ -26,6 +26,27 @@ public class Room {
         return null; // Item not found in this room
     }
 
+    public Food getFoodByName(String foodName) {
+        for (Item item : items) {
+
+            //checks if the current item is an instance of the food class. Ensures that we are looking for food
+            if (item instanceof Food && item.getName().equalsIgnoreCase(foodName)) {
+                return (Food) item;
+            }
+        }
+
+        return null;
+    }
+
+    public boolean hasFood() {
+        for (Item item : items) {
+            if (item instanceof Food) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addItem(Item item) {
         items.add(item);
     }

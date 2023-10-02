@@ -5,12 +5,15 @@ public class Player {
     private Room currentRoom;
     private List<Item> inventory;
     private int maxInventorySize;
+    private int health;
+
 
     //added inventory to represent the player inventory size
-    public Player(Room startingRoom, int maxInventorySize) {
+    public Player(Room startingRoom, int maxInventorySize, int health) {
         this.currentRoom = startingRoom;
         this.inventory = new ArrayList<>();
         this.maxInventorySize = maxInventorySize;
+        this.health = health;
     }
 
     //Check the items in the currentRoom before adding them to the inventory
@@ -44,6 +47,39 @@ public class Player {
         } else {
             System.out.println("You don't have the item " + itemName + " in your inventory.");
         }
+    }
+
+    public void eat(String foodName) {
+        //get food from the current room
+        Food food = currentRoom.getFoodByName(foodName);
+
+        if (food != null) {
+            //get health-points from the food
+            int healthChange = food.getHealthPoints();
+
+            if(healthChange > 0) {
+                System.out.println("You ate " + foodName + " And gained" + healthChange + " health points");
+            } else if (healthChange < 0) {
+                System.out.println("Oops! " + foodName + " was poisonous. You lost " + Math.abs(healthChange) + " health points.");
+            }
+
+            //changes health
+            changeHealth(healthChange);
+            //removes food from the room
+            currentRoom.removeItem(food);
+        } else {
+            System.out.println("No such food in this room");
+        }
+    }
+
+    private void changeHealth(int healthChange) {
+
+        health += healthChange; // Update player's health based on healthChange
+
+        // Ensure that health doesn't go below 0 or exceed 100
+        health = Math.max(0, Math.min(100, health));
+
+        System.out.println("Player's health: " + health); // Print player's updated health
     }
 
     //retrieves the currentroom of the player
