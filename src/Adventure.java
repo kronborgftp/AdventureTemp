@@ -1,3 +1,7 @@
+import item.Item;
+
+import java.util.List;
+
 public class Adventure {
     private Player player;
     private Map map;
@@ -5,7 +9,7 @@ public class Adventure {
     public Adventure() {
         this.map = new Map();
         //set the player maximum inventory to 5
-        this.player = new Player(map.getStartingRoom(), 5);
+        this.player = new Player(map.getStartingRoom(), 5, 100);
 
         initializeGame();
     }
@@ -21,11 +25,14 @@ public class Adventure {
 
     //retrieves the currentroom of the player
     public Room getCurrentRoom() {
-            return player.getCurrentRoom();
+        return player.getCurrentRoom();
     }
 
     //Allow classes to access player
     public Player getPlayer() {
         return player;
+    }
+    public List<Item> showInventory() {
+        return player.showInventory();
     }
 }

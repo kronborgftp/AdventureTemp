@@ -1,18 +1,22 @@
+
+import item.Item;
+import item.Weapon;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
     private String name;
-    private String discription;
+    private String description;
     private Room north;
     private Room east;
     private Room south;
     private Room west;
     private List<Item> items;
 
-    public Room(String name, String discription) {
+    public Room(String name, String description) {
         this.name = name;
-        this.discription = discription;
+        this.description = description;
         items = new ArrayList<>();
     }
 
@@ -23,7 +27,37 @@ public class Room {
                 return item;
             }
         }
-        return null; // Item not found in this room
+        return null; // item.Item not found in this room
+    }
+
+    public Food getFoodByName(String foodName) {
+        for (Item item : items) {
+
+            //checks if the current item is an instance of the food class. Ensures that we are looking for food
+            if (item instanceof Food && item.getName().equalsIgnoreCase(foodName)) {
+                return (Food) item;
+            }
+        }
+
+        return null;
+    }
+
+    public Weapon getWeaponByName(String weaponName) {
+        for (Item item : items) {
+            if (item instanceof Weapon && item.getName().equalsIgnoreCase(weaponName)) {
+                return (Weapon) item;
+            }
+        }
+        return null;
+    }
+
+    public boolean hasFood() {
+        for (Item item : items) {
+            if (item instanceof Food) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addItem(Item item) {
@@ -50,12 +84,12 @@ public class Room {
         this.name = name;
     }
 
-    public String getDiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Room getNorth() {
