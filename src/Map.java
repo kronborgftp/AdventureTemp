@@ -91,12 +91,7 @@ public class Map {
         room4.setSouth(room7);
         room4.setNorth(room1);
 
-
-        // ADD ITEMS TO EACH ROOM
-
-
     }
-
 
     //Getter for startingroom
     public Room getStartingRoom() {

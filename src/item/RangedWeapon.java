@@ -1,7 +1,5 @@
 package item;
 
-import item.ItemType;
-import item.Weapon;
 
 public class RangedWeapon  extends Weapon {
     private int ammunition;

@@ -19,6 +19,7 @@ public class Item {
     public String getDescription() {
         return description;
     }
+
     public String toString() {
         return "item.item.Item" +
                 " name '" + name + '\'' +

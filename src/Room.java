@@ -43,6 +43,7 @@ public class Room {
         return null;
     }
 
+    //may be used later
     public Weapon getWeaponByName(String weaponName) {
         for (Item item : items) {
             if (item instanceof Weapon && item.getName().equalsIgnoreCase(weaponName)) {
@@ -50,15 +51,6 @@ public class Room {
             }
         }
         return null;
-    }
-
-    public boolean hasFood() {
-        for (Item item : items) {
-            if (item instanceof Food) {
-                return true;
-            }
-        }
-        return false;
     }
 
     public void addItem(Item item) {

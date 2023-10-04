@@ -104,33 +104,12 @@ public class UserInterface {
         System.out.println("- Bow and Arrow: Attack enemies from a distance.");
         System.out.println("- Shield: Provides defense against enemy attacks.");
 
-        System.out.println("Assistance:");
-        System.out.println("- Elf for Dragon: Seek help from the Elf to battle the Dragon.");
-        System.out.println("- Fairies: Call upon fairies for assistance.");
-        System.out.println("- Summon Familiar: Summon a magical being to assist you.");
-        System.out.println("- Healing Circle: Create a healing circle to restore health.");
-        System.out.println("- Clairvoyance: See enemy positions or hidden paths.");
-        System.out.println("- Summon Allies: Call upon allies to aid you in battle.");
-        System.out.println("Magic Potion for Temporary Invisibility: Brew a potion for temporary invisibility");
-
         System.out.println("Navigation:");
         System.out.println("- N: Go North");
         System.out.println("- E: Go East");
         System.out.println("- S: Go South");
         System.out.println("- R: Go Right");
 
-        System.out.println("Other Options:");
-        System.out.println("- Do you need a ladder to get out from the dungeons?");
-        System.out.println("- To proceed to Room 9, type 'continue'");
-        System.out.println("- You can't go that way");
-
-        System.out.println("Additional Features:");
-        System.out.println("- Crafting and Resources: Gather resources and craft items.");
-        // System.out.println("- Trade and Shops: Interact with traders to buy/sell items.");
-        System.out.println("- Day/Night Cycle: Experience different challenges based on time.");
-        System.out.println("- Weather Conditions: Encounter different weather affecting gameplay.");
-        System.out.println("- Skills and Abilities: Improve your skills and abilities as you progress.");
-        System.out.println("- Wildlife Interaction: Encounter and interact with various wildlife.");
     }
 
     private void userLook() {

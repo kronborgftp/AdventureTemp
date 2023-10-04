@@ -8,7 +8,7 @@ public class Adventure {
 
     public Adventure() {
         this.map = new Map();
-        //set the player maximum inventory to 5
+        //set the player maximum inventory to 5 and health to 100
         this.player = new Player(map.getStartingRoom(), 5, 100);
 
         initializeGame();

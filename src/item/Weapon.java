@@ -1,9 +1,6 @@
 package item;
 
-import item.Item;
-import item.ItemType;
-
-public class Weapon extends Item {
+public abstract class Weapon extends Item {
     public Weapon(String name, String description, ItemType itemType) {
         super(name, description, itemType);
     }

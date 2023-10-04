@@ -1,8 +1,5 @@
 package item;
 
-import item.Item;
-import item.ItemType;
-
 public class Food extends Item {
 
     private int healthPoints;

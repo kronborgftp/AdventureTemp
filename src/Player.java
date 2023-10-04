@@ -109,7 +109,6 @@ public class Player {
     }
 
     //Use weapon
-
     public void equipWeapon(Weapon weapon) {
         equippedWeapon = weapon;
     }
