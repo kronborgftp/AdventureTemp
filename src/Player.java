@@ -49,6 +49,12 @@ public class Player {
         }
 
         if (itemToDrop != null) {
+
+            //checks if the itemToDrop is equipped, so it will be unequipped first
+            if (itemToDrop instanceof Weapon && itemToDrop.equals(equippedWeapon)) {
+                unequipWeapon();
+            }
+
             inventory.remove(itemToDrop);
             currentRoom.addItem(itemToDrop);
             System.out.println("You dropped " + itemName + " in " + currentRoom.getName());
@@ -99,20 +105,36 @@ public class Player {
         currentRoom = room;
     }
 
-    public Weapon getWeaponByName(String weaponName) {
+
+    //equip weapon
+    public void equipWeapon(String weaponName) {
+        boolean found = false;
+
         for (Item item : inventory) {
             if (item instanceof Weapon && item.getName().equalsIgnoreCase(weaponName)) {
-                return (Weapon) item;
+                equippedWeapon = (Weapon) item;
+                System.out.println("You equipped " + weaponName + ".");
+                found = true;
+                break;
             }
         }
-        return null;
+
+        if (!found) {
+            System.out.println("Weapon '" + weaponName + "' not found in your inventory.");
+        }
+    }
+
+    //unequip weapon
+    public void unequipWeapon() {
+        if (equippedWeapon != null) {
+            System.out.println("You unequipped " + equippedWeapon.getName());
+            equippedWeapon = null;
+        } else {
+            System.out.println("You dont have any weapon equipped");
+        }
     }
 
     //Use weapon
-    public void equipWeapon(Weapon weapon) {
-        equippedWeapon = weapon;
-    }
-
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }

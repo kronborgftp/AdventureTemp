@@ -71,7 +71,9 @@ public class UserInterface {
                 help();
             } else if (userInput.startsWith("equip")) {
                 equipWeapon(userInput);
-            } else if (userInput.equals("attack")) {
+            } else if (userInput.startsWith("unequip")) {
+                unequipWeapon();
+            }else if (userInput.equals("attack")) {
                 attack();
             }else if (userInput.equals("show inventory")) {
                 showInventory();
@@ -168,21 +170,13 @@ public class UserInterface {
     private void equipWeapon(String userInput) {
         String weaponName = userInput.substring(6).trim();
         Player player = adventure.getPlayer();
-        boolean found = false;
+        player.equipWeapon(weaponName);
 
-        for (Item item : player.showInventory()) {
-            if (item instanceof Weapon && item.getName().equalsIgnoreCase(weaponName)) {
-                Weapon weaponToEquip = (Weapon) item;
-                player.equipWeapon(weaponToEquip);
-                System.out.println("You equipped " + weaponName + ".");
-                found = true;
-                break;
-            }
-        }
+    }
 
-        if (!found) {
-            System.out.println("Weapon '" + weaponName + "' not found in your inventory.");
-        }
+    private void unequipWeapon() {
+        Player player = adventure.getPlayer();
+        player.unequipWeapon();
     }
 
     private void attack() {
