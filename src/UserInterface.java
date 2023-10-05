@@ -45,6 +45,7 @@ public class UserInterface {
 
     public void startGame() {
         boolean firstLook = true;
+        String[] validCommands = {"look", "pick up", "drop", "eat", "help", "equip", "unequip", "attack", "show inventory", "exit", "go", "n", "w", "e", "s"};
 
         while (true) {
             Room currentRoom = adventure.getCurrentRoom();
@@ -59,38 +60,64 @@ public class UserInterface {
             System.out.println("Enter a command:");
             String userInput = keyboard.nextLine().toLowerCase();
 
-            if (userInput.equals("look")) {
-                userLook();
-            } else if (userInput.startsWith("pick up ")) {
-                playerPickUpItem(userInput);
-            } else if (userInput.startsWith("drop ")) {
-                playerDropItem(userInput);
-            } else if (userInput.startsWith("eat ")) {
-                playerEatFood(userInput);
-            } else if (userInput.equals("help")) {
-                help();
-            } else if (userInput.startsWith("equip")) {
-                equipWeapon(userInput);
-            } else if (userInput.startsWith("unequip")) {
-                unequipWeapon();
-            }else if (userInput.equals("attack")) {
-                attack();
-            }else if (userInput.equals("show inventory")) {
-                showInventory();
-            } else if (userInput.equals("exit")) {
-                System.out.println("Goodbye");
-                System.exit(0);
-            } else if (userInput.startsWith("go ")) {
-                String direction = userInput.substring(3);
-                adventure.move(direction);
-            } else if (userInput.equals("n") || userInput.equals("w") || userInput.equals("e") || userInput.equals("s")) {
-                String direction = userInput;
-                adventure.move(direction);
-            } else {
+            boolean isValidCommand = false;
+            for (String command : validCommands) {
+                if (userInput.startsWith(command)) {
+                    isValidCommand = true;
+                    switch (command) {
+                        case "look":
+                            userLook();
+                            break;
+                        case "pick up":
+                            playerPickUpItem(userInput);
+                            break;
+                        case "drop":
+                            playerDropItem(userInput);
+                            break;
+                        case "eat":
+                            playerEatFood(userInput);
+                            break;
+                        case "help":
+                            help();
+                            break;
+                        case "equip":
+                            equipWeapon(userInput);
+                            break;
+                        case "unequip":
+                            unequipWeapon();
+                            break;
+                        case "attack":
+                            attack();
+                            break;
+                        case "show inventory":
+                            showInventory();
+                            break;
+                        case "exit":
+                            System.out.println("Goodbye");
+                            System.exit(0);
+                            break;
+                        case "go":
+                            String direction = userInput.substring(command.length() + 1);
+                            adventure.move(direction);
+                            break;
+                        case "n":
+                        case "w":
+                        case "e":
+                        case "s":
+                            direction = command;
+                            adventure.move(direction);
+                            break;
+                    }
+                    break;
+                }
+            }
+
+            if (!isValidCommand) {
                 System.out.println("Invalid command");
             }
         }
     }
+
 
 
     public void help() {
