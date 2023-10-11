@@ -1,7 +1,7 @@
 package item;
 
 
-public class RangedWeapon  extends Weapon {
+public class RangedWeapon extends Weapon {
     private int minDamage;
     private int maxDamage;
     private int ammunition;
@@ -13,9 +13,6 @@ public class RangedWeapon  extends Weapon {
         this.ammunition = ammunition;
     }
 
-    public int getAmmunition() {
-        return ammunition;
-    }
 
     public void decreaseAmmunition() {
         ammunition--;

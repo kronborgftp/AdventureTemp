@@ -123,7 +123,6 @@ public class UserInterface {
     }
 
 
-
     public void help() {
         System.out.println("== Help Menu ==");
         System.out.println("Basic Needs:");
@@ -196,12 +195,8 @@ public class UserInterface {
     }
 
     private void showInventory() {
-        System.out.println("Inventory:");
-        for (Item item : adventure.showInventory()) {
-            if (item != null) {
-                System.out.println(item.getName());
-            }
-        }
+        Player player = adventure.getPlayer();
+        player.showInventory();
     }
 
     private void playerEatFood(String userInput) {

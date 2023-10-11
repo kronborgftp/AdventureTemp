@@ -18,23 +18,9 @@ public class Enemy {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public int getHealth() {
         return health;
     }
-
-    public Weapon getEquippedWeapon() {
-        return equippedWeapon;
-    }
-
-    public void attack(Player player) {
-        int damage = equippedWeapon.calculateDamage(); // Implement this method in Weapon class
-        player.takeDamage(damage);
-    }
-
 
     public void attackPlayer(Player player) {
         int damageDealt = equippedWeapon.calculateDamage();

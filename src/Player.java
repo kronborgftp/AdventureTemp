@@ -36,10 +36,6 @@ public class Player {
         }
     }
 
-    public int getHealth() {
-        return health;
-    }
-
 
     public void attack() {
         Weapon equippedWeapon = getEquippedWeapon();
@@ -77,9 +73,6 @@ public class Player {
     }
 
 
-
-
-
     //Allows the player to drop the item, and add the item to the current room.
     public void dropItem(String itemName, Room currentRoom) {
         Item itemToDrop = null;
@@ -113,7 +106,7 @@ public class Player {
             //get health-points from the food
             int healthChange = food.getHealthPoints();
 
-            if(healthChange > 0) {
+            if (healthChange > 0) {
                 System.out.println("You ate " + foodName + " And gained" + healthChange + " health points");
             } else if (healthChange < 0) {
                 System.out.println("Oops! " + foodName + " was poisonous. You lost " + Math.abs(healthChange) + " health points.");
@@ -209,13 +202,18 @@ public class Player {
             System.out.println("You cannot go that way.");
         }
     }
-    public List<Item> showInventory()
-    {
+
+    public List<Item> showInventory() {
         return inventory;
     }
 
-    public List<Item> look () {
-        return currentRoom.getItems();
+    public void playerShowInventory() {
+        System.out.println("Inventory:");
+        for (Item item : showInventory()) {
+            if (item != null) {
+                System.out.println(item.getName());
+            }
+        }
     }
 
 

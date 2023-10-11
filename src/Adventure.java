@@ -19,7 +19,7 @@ public class Adventure {
         player.setCurrentRoom(map.getStartingRoom());
     }
 
-    public void move(String direction){
+    public void move(String direction) {
         this.player.move(direction);
     }
 
@@ -32,6 +32,7 @@ public class Adventure {
     public Player getPlayer() {
         return player;
     }
+
     public List<Item> showInventory() {
         return player.showInventory();
     }

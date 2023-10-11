@@ -4,7 +4,7 @@ import item.*;
 public class Map {
     private Room startingRoom;
 
-    public Map(){
+    public Map() {
         Room room1 = new Room(" ", "You are standing in a cave, you hear the water silently dripping from above. \n" +
                 "You can see a dim light to one side of you, and hear water running in a distance. Which way would you like to go?");
         Item food1Room1 = new Food("apple", "extremely delicious", 20, ItemType.FOOD);
@@ -18,7 +18,7 @@ public class Map {
         Item meleeWeapon = new MeleeWeapon("Sword", "A sharp sword", 5, 50);
         room2.addItem(meleeWeapon);
         Weapon skeletonWeapon = new MeleeWeapon("Bones", "Pointy bones", 8, 15);
-        Enemy enemy2 = new Enemy("Skeleton","Scary", 40, skeletonWeapon);
+        Enemy enemy2 = new Enemy("Skeleton", "Scary", 40, skeletonWeapon);
         room2.addEnemy(enemy2);
 
         Room room3 = new Room(" ", "You stop and see that you are standing on edge of a cliff, \n " +
@@ -30,7 +30,7 @@ public class Map {
                 "You see a small boat floating around. The boat seems rather broken, would you like to try to get to the other side or explore another direction?");
         Item item2Room4 = new Item("paddle", "an old rotten paddle.", ItemType.TOOL);
         room4.addItem(item2Room4);
-        Item food3Room4= new Food("seaweed", "tasty.. not", 1, ItemType.FOOD);
+        Item food3Room4 = new Food("seaweed", "tasty.. not", 1, ItemType.FOOD);
         room4.addItem(food3Room4);
 
         Room room5 = new Room(" ", "You have entered a great cave with a big lake covered in shimmering light.\n " +
@@ -40,27 +40,27 @@ public class Map {
         room5.addItem(food4Room5);
 
         Room room6 = new Room(" ", "You are now going down a small path, there is suspeciously quit. The darkness is overwhelming you can't see\n" +
-                " see anything, and you feel your way through the darkness. You suddenly feel a wooden box, and it seems like the path splits up in serveal directions\n"+
+                " see anything, and you feel your way through the darkness. You suddenly feel a wooden box, and it seems like the path splits up in serveal directions\n" +
                 "which way would you to go?");
         Item item3Room6 = new Item("Key", "A rusty old key.", ItemType.TOOL);
         room6.addItem(item3Room6);
 
-        Room room7 = new Room(" ", "You are now standing on the riverbank. Suddenly you notice a silent sound of drums. \n"+
+        Room room7 = new Room(" ", "You are now standing on the riverbank. Suddenly you notice a silent sound of drums. \n" +
                 "The sound of the drums get louder and louder. You can't quite hear where the sound is comming from. Nearby in the river something is floating around. \n" +
                 "Which way would you like to go?");
         Item rangedWeapon = new RangedWeapon("Bow", "A powerful bow", 10, 30, 10);
         room1.addItem(rangedWeapon);
 
         //DET STORE FARLIGE RUM!! :O :O :O :O
-        Room room8 = new Room(" ", "You feel a sudden heat, and starts to sweat. You look down and see lava floating \n"+
+        Room room8 = new Room(" ", "You feel a sudden heat, and starts to sweat. You look down and see lava floating \n" +
                 "around you, dangerously close. There are stones floating around like an iced sea. Where would you like to go?");
         Item food5Room8 = new Food("Ice cream", "cold and refreshing", 20, ItemType.FOOD);
         room8.addItem(food5Room8);
         Weapon bossWeapon = new MeleeWeapon("Fire breath", "Enormous flames", 1, 100);
-        Enemy enemyBoss = new Enemy("Bowser", "From mario", 1000,bossWeapon );
+        Enemy enemyBoss = new Enemy("Bowser", "From mario", 1000, bossWeapon);
         room8.addEnemy(enemyBoss);
 
-        Room room9 = new Room(" ", "You are now deep into the cave, you have to climb up a steep hill to go west. \n "+
+        Room room9 = new Room(" ", "You are now deep into the cave, you have to climb up a steep hill to go west. \n " +
                 "Can you take the climp, or go in another direction?");
         Item item5Room9 = new Item("Boots", "boots with an exceptional grip", ItemType.TOOL);
         room9.addItem(item5Room9);
