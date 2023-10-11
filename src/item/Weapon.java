@@ -8,4 +8,6 @@ public abstract class Weapon extends Item {
     public void use() {
         System.out.println("You used the weapon: " + getName());
     }
+
+    public abstract int calculateDamage();
 }

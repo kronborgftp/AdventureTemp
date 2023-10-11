@@ -83,6 +83,9 @@ public class UserInterface {
                         case "equip":
                             equipWeapon(userInput);
                             break;
+                        case "pick up and equip":
+                            playerPickUpItem(userInput);
+                            equipWeapon(userInput);
                         case "unequip":
                             unequipWeapon();
                             break;
@@ -115,6 +118,7 @@ public class UserInterface {
             if (!isValidCommand) {
                 System.out.println("Invalid command");
             }
+            enemyTurn();
         }
     }
 
@@ -144,6 +148,7 @@ public class UserInterface {
     private void userLook() {
         Room currentRoom = adventure.getCurrentRoom();
         List<Item> itemsInRoom = currentRoom.getItems();
+        List<Enemy> enemiesInRoom = currentRoom.getEnemies();
 
         if (!itemsInRoom.isEmpty()) {
             System.out.println("Items in this room:");
@@ -153,7 +158,17 @@ public class UserInterface {
         } else {
             System.out.println("There are no items in this room.");
         }
+
+        if (!enemiesInRoom.isEmpty()) {
+            System.out.println("Enemies in this room:");
+            for (Enemy enemy : enemiesInRoom) {
+                System.out.println(enemy.getName() + " (Health: " + enemy.getHealth() + ")");
+            }
+        } else {
+            System.out.println("There are no enemies in this room.");
+        }
     }
+
 
     private void playerPickUpItem(String userInput) {
         String itemName = userInput.substring(8);
@@ -207,13 +222,15 @@ public class UserInterface {
     }
 
     private void attack() {
-        Weapon equippedWeapon = adventure.getPlayer().getEquippedWeapon();
-
-        if (equippedWeapon != null) {
-            equippedWeapon.use();
-        } else {
-            System.out.println("You don't have a weapon equipped.");
-        }
+        adventure.getPlayer().attack();
     }
 
+    private void enemyTurn() {
+        Room currentRoom = adventure.getCurrentRoom();
+        List<Enemy> enemiesInRoom = currentRoom.getEnemies();
+
+        for (Enemy enemy : enemiesInRoom) {
+            enemy.attackPlayer(adventure.getPlayer());
+        }
+    }
 }

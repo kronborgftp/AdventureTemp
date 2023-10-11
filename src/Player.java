@@ -36,6 +36,48 @@ public class Player {
         }
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+
+    public void attack() {
+        Weapon equippedWeapon = getEquippedWeapon();
+        if (equippedWeapon != null) {
+            List<Enemy> enemiesInRoom = getCurrentRoom().getEnemies();
+            if (!enemiesInRoom.isEmpty()) {
+                // Attack the first enemy in the room
+                Enemy enemy = enemiesInRoom.get(0);
+                int damage = equippedWeapon.calculateDamage();
+                System.out.println("You attacked the " + enemy.getName() + " with " + equippedWeapon.getName() + " and dealt " + damage + " damage.");
+                enemy.takeDamage(damage);
+
+                // Handle enemy defeat logic (remove enemy from room, drop items, etc.)
+                if (enemy.getHealth() <= 0) {
+                    getCurrentRoom().removeEnemy(enemy);
+                    System.out.println("The " + enemy.getName() + " has been defeated!");
+                }
+            } else {
+                System.out.println("There are no enemies in this room to attack.");
+            }
+        } else {
+            System.out.println("You don't have a weapon equipped.");
+        }
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            System.out.println("Player has been defeated!");
+            // Handle game over logic if needed
+            System.exit(0);
+        } else {
+            System.out.println("Player's health: " + health);
+        }
+    }
+
+
+
 
 
     //Allows the player to drop the item, and add the item to the current room.

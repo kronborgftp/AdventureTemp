@@ -14,11 +14,26 @@ public class Room {
     private Room south;
     private Room west;
     private List<Item> items;
+    private List<Enemy> enemies;
+
 
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
         items = new ArrayList<>();
+        enemies = new ArrayList<>();
+    }
+
+    public void addEnemy(Enemy enemy) {
+        enemies.add(enemy);
+    }
+
+    public void removeEnemy(Enemy enemy) {
+        enemies.remove(enemy);
+    }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
     }
 
     //getter for items in the room
