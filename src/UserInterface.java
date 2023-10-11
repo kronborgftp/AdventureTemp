@@ -196,7 +196,7 @@ public class UserInterface {
 
     private void showInventory() {
         Player player = adventure.getPlayer();
-        player.showInventory();
+        player.playerShowInventory();
     }
 
     private void playerEatFood(String userInput) {
