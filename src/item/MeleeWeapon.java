@@ -4,7 +4,7 @@ public class MeleeWeapon extends Weapon {
     private int minDamage;
     private int maxDamage;
 
-    public MeleeWeapon(String name, String description, int minDamage, int maxDamage) {
+    public MeleeWeapon(String name, String description, int minDamage, int maxDamage, ItemType itemType) {
         super(name, description, ItemType.WEAPON);
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;

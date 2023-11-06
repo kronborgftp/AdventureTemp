@@ -6,7 +6,7 @@ public class RangedWeapon extends Weapon {
     private int maxDamage;
     private int ammunition;
 
-    public RangedWeapon(String name, String description, int minDamage, int maxDamage, int ammunition) {
+    public RangedWeapon(String name, String description, int minDamage, int maxDamage, int ammunition, ItemType itemType) {
         super(name, description, ItemType.WEAPON);
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;

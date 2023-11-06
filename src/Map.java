@@ -9,15 +9,15 @@ public class Map {
                 "You can see a dim light to one side of you, and hear water running in a distance. Which way would you like to go?");
         Item food1Room1 = new Food("apple", "extremely delicious", 20, ItemType.FOOD);
         room1.addItem(food1Room1);
-        Weapon goblinWeapon = new MeleeWeapon("Sword", "small and pointy", 5, 15);
+        Weapon goblinWeapon = new MeleeWeapon("Sword", "small and pointy", 5, 15, ItemType.WEAPON);
         Enemy enemy1 = new Enemy("Goblin", "Ugly", 30, goblinWeapon);
         room1.addEnemy(enemy1);
 
         Room room2 = new Room(" ", "You can see the remains of a fire and the embers glowing in the dark.\n" +
                 " You discover footsteps going further in to the cave. Which way would you like to explore?");
-        Item meleeWeapon = new MeleeWeapon("Sword", "A sharp sword", 5, 50);
+        Item meleeWeapon = new MeleeWeapon("Sword", "A sharp sword", 5, 50, ItemType.WEAPON);
         room2.addItem(meleeWeapon);
-        Weapon skeletonWeapon = new MeleeWeapon("Bones", "Pointy bones", 8, 15);
+        Weapon skeletonWeapon = new MeleeWeapon("Bones", "Pointy bones", 8, 15, ItemType.WEAPON);
         Enemy enemy2 = new Enemy("Skeleton", "Scary", 40, skeletonWeapon);
         room2.addEnemy(enemy2);
 
@@ -48,7 +48,7 @@ public class Map {
         Room room7 = new Room(" ", "You are now standing on the riverbank. Suddenly you notice a silent sound of drums. \n" +
                 "The sound of the drums get louder and louder. You can't quite hear where the sound is comming from. Nearby in the river something is floating around. \n" +
                 "Which way would you like to go?");
-        Item rangedWeapon = new RangedWeapon("Bow", "A powerful bow", 10, 50, 10);
+        Item rangedWeapon = new RangedWeapon("Bow", "A powerful bow", 10, 50, 10, ItemType.WEAPON);
         room1.addItem(rangedWeapon);
 
         //DET STORE FARLIGE RUM!! :O :O :O :O
@@ -56,7 +56,7 @@ public class Map {
                 "around you, dangerously close. There are stones floating around like an iced sea. Where would you like to go?");
         Item food5Room8 = new Food("Ice cream", "cold and refreshing", 20, ItemType.FOOD);
         room8.addItem(food5Room8);
-        Weapon bossWeapon = new MeleeWeapon("Fire breath", "Enormous flames", 1, 50);
+        Weapon bossWeapon = new MeleeWeapon("Fire breath", "Enormous flames", 1, 50, ItemType.WEAPON);
         Enemy enemyBoss = new Enemy("Bowser", "From mario", 300, bossWeapon);
         room8.addEnemy(enemyBoss);
 
