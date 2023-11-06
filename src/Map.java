@@ -48,7 +48,7 @@ public class Map {
         Room room7 = new Room(" ", "You are now standing on the riverbank. Suddenly you notice a silent sound of drums. \n" +
                 "The sound of the drums get louder and louder. You can't quite hear where the sound is comming from. Nearby in the river something is floating around. \n" +
                 "Which way would you like to go?");
-        Item rangedWeapon = new RangedWeapon("Bow", "A powerful bow", 10, 30, 10);
+        Item rangedWeapon = new RangedWeapon("Bow", "A powerful bow", 10, 50, 10);
         room1.addItem(rangedWeapon);
 
         //DET STORE FARLIGE RUM!! :O :O :O :O
@@ -56,8 +56,8 @@ public class Map {
                 "around you, dangerously close. There are stones floating around like an iced sea. Where would you like to go?");
         Item food5Room8 = new Food("Ice cream", "cold and refreshing", 20, ItemType.FOOD);
         room8.addItem(food5Room8);
-        Weapon bossWeapon = new MeleeWeapon("Fire breath", "Enormous flames", 1, 100);
-        Enemy enemyBoss = new Enemy("Bowser", "From mario", 1000, bossWeapon);
+        Weapon bossWeapon = new MeleeWeapon("Fire breath", "Enormous flames", 1, 50);
+        Enemy enemyBoss = new Enemy("Bowser", "From mario", 300, bossWeapon);
         room8.addEnemy(enemyBoss);
 
         Room room9 = new Room(" ", "You are now deep into the cave, you have to climb up a steep hill to go west. \n " +
